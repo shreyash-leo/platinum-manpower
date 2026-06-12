@@ -77,14 +77,14 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-white min-h-screen overflow-x-hidden">
+    <main className="min-h-screen overflow-x-hidden" style={{ backgroundColor: "#FFFFFF" }}>
       <Navbar />
 
-      {/* HERO SECTION */}
-      <section className="px-8 pt-32 pb-6 bg-white">
+      {/* HERO SECTION - Minimal Premium */}
+      <section className="px-8 pt-32 pb-6" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="relative overflow-hidden h-[820px]">
 
-          {/* Parallax Background - Updated with composite image showing multiple industries */}
+          {/* Parallax Background */}
           <motion.img
             style={{ y: parallaxY }}
             initial={{ scale: 1.15 }}
@@ -95,28 +95,28 @@ export default function Home() {
             className="absolute inset-0 h-full w-full object-cover"
           />
 
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/35" />
+          {/* Overlay - lighter for modern look */}
+          <div className="absolute inset-0 bg-black/30" />
 
-          {/* Animated Content Box - Updated with company tagline and info */}
+          {/* Animated Content Box - updated typography */}
           <motion.div
             initial={{ opacity: 0, x: -80 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             className="absolute left-[12%] top-1/2 -translate-y-1/2"
           >
-            <div className="border-[5px] border-[#0D5EA8] w-[330px] h-[620px] p-12 flex flex-col justify-between">
+            <div className="border-[5px] border-[#2563EB] w-[330px] h-[620px] p-12 flex flex-col justify-between bg-white/5 backdrop-blur-sm">
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                <p className="uppercase tracking-[0.25em] text-white text-sm font-semibold">
+                <p className="uppercase tracking-[0.25em] text-white text-sm font-semibold" style={{ fontFamily: "'Inter', sans-serif" }}>
                   Platinum Manpower
                 </p>
 
-                <h1 className="text-white font-bold text-7xl leading-[0.9] mt-8">
+                <h1 className="text-white font-bold text-7xl leading-[0.9] mt-8" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800 }}>
                   Skilled.
                   <br />
                   Verified.
@@ -124,7 +124,7 @@ export default function Home() {
                   Managed.
                 </h1>
 
-                <p className="text-white/80 mt-8 text-lg leading-8 max-w-[220px]">
+                <p className="text-white/85 mt-8 text-lg leading-8 max-w-[220px]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>
                   Specialized manpower solutions for Hospitals, Hotels, Shopping Malls & Airports.
                 </p>
               </motion.div>
@@ -133,6 +133,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="group text-white text-2xl flex items-center gap-4"
+                style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
               >
                 Explore
                 <motion.span
@@ -149,26 +150,27 @@ export default function Home() {
 
           {/* Slider Indicators */}
           <div className="absolute bottom-32 right-16 flex gap-5">
-            <div className="w-12 h-[4px] bg-white/50" />
-            <div className="w-12 h-[4px] bg-white/50" />
+            <div className="w-12 h-[4px] bg-white/30" />
+            <div className="w-12 h-[4px] bg-white/30" />
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: 48 }}
               transition={{ duration: 1.5, delay: 0.5 }}
-              className="h-[4px] bg-[#0D5EA8]"
+              className="h-[4px] bg-[#2563EB]"
             />
           </div>
 
         </div>
       </section>
 
-      {/* WHY CHOOSE US - Replaced with About Us content */}
+      {/* WHY CHOOSE US / ABOUT US - Updated typography */}
       <motion.section
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="bg-[#f7f8fa] py-32 overflow-hidden"
+        style={{ backgroundColor: "#F8FAFC" }}
+        className="py-32 overflow-hidden"
       >
         <div className="max-w-[1600px] mx-auto px-8 lg:px-14">
           <div className="grid lg:grid-cols-2 gap-20 items-start">
@@ -182,24 +184,24 @@ export default function Home() {
               className="flex flex-col justify-between h-full"
             >
               <div>
-                <p className="uppercase tracking-[0.25em] text-[#0D5EA8] text-sm font-medium mb-8">
+                <p className="uppercase tracking-[0.25em] text-sm font-medium mb-8" style={{ color: "#2563EB", fontFamily: "'Inter', sans-serif" }}>
                   About Us
                 </p>
 
-                <h2 className="text-5xl lg:text-7xl font-semibold leading-[1] max-w-[700px] mb-12">
+                <h2 className="text-5xl lg:text-7xl leading-[1] max-w-[700px] mb-12" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, color: "#111827" }}>
                   Every business grows stronger with the right people behind it.
                 </h2>
 
-                <p className="text-neutral-500 text-lg leading-[2] max-w-[650px]">
+                <p className="text-lg leading-[2] max-w-[650px]" style={{ color: "#4B5563", fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>
                   At Platinum Manpower and Facility Management Services, we provide skilled and unskilled manpower solutions for hospitals, hotels, shopping malls, and airports with a focus on reliability, professionalism, and long-term support.
                 </p>
-                <p className="text-neutral-500 text-lg leading-[2] max-w-[650px] mt-6">
+                <p className="text-lg leading-[2] max-w-[650px] mt-6" style={{ color: "#4B5563", fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>
                   Our team works closely with clients to understand staffing requirements and provide verified manpower suited to operational needs.
                 </p>
               </div>
             </motion.div>
 
-            {/* RIGHT - Updated with workforce management image */}
+            {/* RIGHT - Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -207,7 +209,7 @@ export default function Home() {
               transition={{ duration: 0.7 }}
               className="relative flex justify-center"
             >
-              <div className="absolute -bottom-14 -left-14 w-[500px] h-[350px] opacity-15 bg-[radial-gradient(#0D5EA8_1px,transparent_1px)] [background-size:12px_12px]" />
+              <div className="absolute -bottom-14 -left-14 w-[500px] h-[350px] opacity-15" style={{ backgroundImage: "radial-gradient(#2563EB 1px, transparent 1px)", backgroundSize: "12px 12px" }} />
 
               <motion.img
                 whileHover={{ scale: 1.02 }}
@@ -217,20 +219,20 @@ export default function Home() {
                 className="relative z-10 w-full max-w-[650px] h-[900px] object-cover"
               />
 
-              <div className="absolute top-10 -right-10 w-3 h-48 bg-[#0D5EA8]" />
+              <div className="absolute top-10 -right-10 w-3 h-48" style={{ backgroundColor: "#2563EB" }} />
             </motion.div>
 
           </div>
         </div>
       </motion.section>
 
-      {/* INDUSTRIES WE SERVE - Updated with your specific industries */}
+      {/* INDUSTRIES WE SERVE - Updated typography */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-36 bg-white"
+        className="py-36" style={{ backgroundColor: "#FFFFFF" }}
       >
         <div className="max-w-[1600px] mx-auto px-8 lg:px-14">
 
@@ -242,11 +244,11 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="mb-24"
           >
-            <div className="w-20 h-[3px] bg-[#0D5EA8] mb-8" />
-            <p className="uppercase tracking-[0.25em] text-[#0D5EA8] text-sm font-medium mb-6">
+            <div className="w-20 h-[3px] mb-8" style={{ backgroundColor: "#2563EB" }} />
+            <p className="uppercase tracking-[0.25em] text-sm font-medium mb-6" style={{ color: "#2563EB", fontFamily: "'Inter', sans-serif" }}>
               Industries We Serve
             </p>
-            <h2 className="text-5xl lg:text-7xl font-semibold leading-[1] max-w-[900px]">
+            <h2 className="text-5xl lg:text-7xl leading-[1] max-w-[900px]" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, color: "#111827" }}>
               Specialized manpower for critical industries.
             </h2>
           </motion.div>
@@ -293,7 +295,7 @@ export default function Home() {
                 key={industry.id}
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
-                className="group relative overflow-hidden bg-neutral-900 cursor-pointer"
+                className="group relative overflow-hidden cursor-pointer" style={{ backgroundColor: "#111827" }}
               >
                 <img 
                   src={industry.image} 
@@ -302,11 +304,11 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-10 text-white">
-                  <span className="text-neutral-300 text-sm tracking-wider">{industry.id}</span>
-                  <h3 className="text-4xl font-bold mt-2 mb-4">{industry.title}</h3>
+                  <span className="text-neutral-300 text-sm tracking-wider" style={{ fontFamily: "'Inter', sans-serif" }}>{industry.id}</span>
+                  <h3 className="text-4xl font-bold mt-2 mb-4" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700 }}>{industry.title}</h3>
                   <div className="flex flex-wrap gap-2 mt-3">
                     {industry.roles.map((role, idx) => (
-                      <span key={idx} className="text-sm text-white/70 border border-white/20 rounded-full px-3 py-1">
+                      <span key={idx} className="text-sm text-white/70 border border-white/20 rounded-full px-3 py-1" style={{ fontFamily: "'Inter', sans-serif" }}>
                         {role}
                       </span>
                     ))}
@@ -319,13 +321,13 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* SERVICES - Updated with your services */}
+      {/* SERVICES - Updated typography */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-36 bg-[#f7f8fa]"
+        className="py-36" style={{ backgroundColor: "#F8FAFC" }}
       >
         <div className="max-w-[1600px] mx-auto px-8 lg:px-14">
 
@@ -337,11 +339,11 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="mb-24"
           >
-            <div className="w-20 h-[3px] bg-[#0D5EA8] mb-8" />
-            <p className="uppercase tracking-[0.25em] text-[#0D5EA8] text-sm font-medium mb-6">
+            <div className="w-20 h-[3px] mb-8" style={{ backgroundColor: "#2563EB" }} />
+            <p className="uppercase tracking-[0.25em] text-sm font-medium mb-6" style={{ color: "#2563EB", fontFamily: "'Inter', sans-serif" }}>
               Our Services
             </p>
-            <h2 className="text-5xl lg:text-7xl font-semibold leading-[1] max-w-[900px]">
+            <h2 className="text-5xl lg:text-7xl leading-[1] max-w-[900px]" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, color: "#111827" }}>
               Comprehensive staffing solutions for every need.
             </h2>
           </motion.div>
@@ -366,7 +368,7 @@ export default function Home() {
                 key={service.number}
                 variants={itemVariants}
                 whileHover={{ y: -10 }}
-                className="group bg-white border border-neutral-200 hover:border-[#0D5EA8] transition-all duration-500 overflow-hidden"
+                className="group transition-all duration-500 overflow-hidden" style={{ backgroundColor: "#FFFFFF", border: "1px solid #E5E7EB", borderColor: "#E5E7EB" }}
               >
                 <div className="h-56 overflow-hidden">
                   <img 
@@ -376,17 +378,17 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-8">
-                  <span className="text-5xl font-semibold text-neutral-200 group-hover:text-[#0D5EA8] transition-all duration-500">
+                  <span className="text-5xl font-semibold transition-all duration-500" style={{ color: "#E5E7EB" }}>
                     {service.number}
                   </span>
-                  <h3 className="text-2xl font-medium mt-4 mb-3">{service.title}</h3>
-                  <p className="text-neutral-500 leading-7 text-sm">{service.description}</p>
+                  <h3 className="text-2xl font-medium mt-4 mb-3" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, color: "#111827" }}>{service.title}</h3>
+                  <p className="leading-7 text-sm" style={{ color: "#6B7280", fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>{service.description}</p>
                   <motion.div
                     initial={{ x: 0 }}
                     whileHover={{ x: 10 }}
                     className="flex justify-end mt-6"
                   >
-                    <span className="text-2xl text-[#0D5EA8]">→</span>
+                    <span className="text-2xl" style={{ color: "#2563EB" }}>→</span>
                   </motion.div>
                 </div>
               </motion.div>
@@ -396,116 +398,117 @@ export default function Home() {
         </div>
       </motion.section>
 
-      <section className="bg-white py-40">
-  <div className="max-w-[1600px] mx-auto px-8 lg:px-14">
-    <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-24">
+      {/* WHY CHOOSE PLATINUM - Updated typography */}
+      <section className="py-40" style={{ backgroundColor: "#FFFFFF" }}>
+        <div className="max-w-[1600px] mx-auto px-8 lg:px-14">
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-24">
 
-      {/* Left Side */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="sticky top-40 self-start"
-      >
-        <p className="uppercase tracking-[0.3em] text-[#0D5EA8] text-sm mb-8">
-          Why Choose Platinum
-        </p>
+            {/* Left Side */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="sticky top-40 self-start"
+            >
+              <p className="uppercase tracking-[0.3em] text-sm mb-8" style={{ color: "#2563EB", fontFamily: "'Inter', sans-serif" }}>
+                Why Choose Platinum
+              </p>
 
-        <h2 className="text-7xl lg:text-[120px] leading-[0.9] font-light text-black">
-          Built
-          <br />
-          on Trust.
-        </h2>
+              <h2 className="text-7xl lg:text-[120px] leading-[0.9] font-light" style={{ color: "#111827", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                Built
+                <br />
+                on Trust.
+              </h2>
 
-        <p className="mt-10 text-neutral-500 max-w-sm text-lg leading-8">
-          Reliable manpower solutions designed for hospitals,
-          hotels, malls and airports.
-        </p>
-      </motion.div>
+              <p className="mt-10 max-w-sm text-lg leading-8" style={{ color: "#6B7280", fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>
+                Reliable manpower solutions designed for hospitals,
+                hotels, malls and airports.
+              </p>
+            </motion.div>
 
-      {/* Right Side */}
-      <motion.div
-        variants={staggerFeatures}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        {[
-          {
-            no: "01",
-            title: "Trained Workers",
-            desc: "Workplace discipline, hygiene, grooming and service standards."
-          },
-          {
-            no: "02",
-            title: "Quick Replacement",
-            desc: "Immediate staffing support when operations require continuity."
-          },
-          {
-            no: "03",
-            title: "Verified Manpower",
-            desc: "Screened and verified workforce before deployment."
-          },
-          {
-            no: "04",
-            title: "Professional Management",
-            desc: "Structured coordination from selection to deployment."
-          },
-          {
-            no: "05",
-            title: "24/7 Support",
-            desc: "Always available for urgent staffing requirements."
-          },
-          {
-            no: "06",
-            title: "Affordable Solutions",
-            desc: "Practical workforce solutions for every scale of business."
-          }
-        ].map((item) => (
-          <motion.div
-            key={item.no}
-            variants={featureItemVariants}
-            whileHover={{
-              x: 10,
-              transition: { duration: 0.3 }
-            }}
-            className="group border-b border-neutral-200 py-14 cursor-pointer"
-          >
-            <div className="flex items-start gap-10">
+            {/* Right Side */}
+            <motion.div
+              variants={staggerFeatures}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {[
+                {
+                  no: "01",
+                  title: "Trained Workers",
+                  desc: "Workplace discipline, hygiene, grooming and service standards."
+                },
+                {
+                  no: "02",
+                  title: "Quick Replacement",
+                  desc: "Immediate staffing support when operations require continuity."
+                },
+                {
+                  no: "03",
+                  title: "Verified Manpower",
+                  desc: "Screened and verified workforce before deployment."
+                },
+                {
+                  no: "04",
+                  title: "Professional Management",
+                  desc: "Structured coordination from selection to deployment."
+                },
+                {
+                  no: "05",
+                  title: "24/7 Support",
+                  desc: "Always available for urgent staffing requirements."
+                },
+                {
+                  no: "06",
+                  title: "Affordable Solutions",
+                  desc: "Practical workforce solutions for every scale of business."
+                }
+              ].map((item) => (
+                <motion.div
+                  key={item.no}
+                  variants={featureItemVariants}
+                  whileHover={{
+                    x: 10,
+                    transition: { duration: 0.3 }
+                  }}
+                  className="group border-b cursor-pointer py-14" style={{ borderColor: "#E5E7EB" }}
+                >
+                  <div className="flex items-start gap-10">
 
-              <span className="text-[#0D5EA8] text-xl font-medium min-w-[60px]">
-                {item.no}
-              </span>
+                    <span className="text-xl font-medium min-w-[60px]" style={{ color: "#2563EB", fontFamily: "'Inter', sans-serif" }}>
+                      {item.no}
+                    </span>
 
-              <div className="flex-1">
+                    <div className="flex-1">
 
-                <h3 className="text-4xl lg:text-5xl font-light text-black transition-all duration-500 group-hover:translate-x-4">
-                  {item.title}
-                </h3>
+                      <h3 className="text-4xl lg:text-5xl font-light transition-all duration-500 group-hover:translate-x-4" style={{ color: "#111827", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                        {item.title}
+                      </h3>
 
-                <p className="mt-4 text-neutral-500 max-w-xl text-lg leading-8">
-                  {item.desc}
-                </p>
+                      <p className="mt-4 max-w-xl text-lg leading-8" style={{ color: "#6B7280", fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>
+                        {item.desc}
+                      </p>
 
-              </div>
+                    </div>
 
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
 
-    </div>
-  </div>
-</section>
+          </div>
+        </div>
+      </section>
 
-      {/* GALLERY SECTION - New Section */}
+      {/* GALLERY SECTION - Updated typography */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-36 bg-[#f7f8fa]"
+        className="py-36" style={{ backgroundColor: "#F8FAFC" }}
       >
         <div className="max-w-[1600px] mx-auto px-8 lg:px-14">
 
@@ -516,11 +519,11 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <div className="w-20 h-[3px] bg-[#0D5EA8] mx-auto mb-8" />
-            <p className="uppercase tracking-[0.25em] text-[#0D5EA8] text-sm font-medium mb-6">
+            <div className="w-20 h-[3px] mx-auto mb-8" style={{ backgroundColor: "#2563EB" }} />
+            <p className="uppercase tracking-[0.25em] text-sm font-medium mb-6" style={{ color: "#2563EB", fontFamily: "'Inter', sans-serif" }}>
               Our Workforce
             </p>
-            <h2 className="text-5xl lg:text-7xl font-semibold leading-[1] max-w-[800px] mx-auto">
+            <h2 className="text-5xl lg:text-7xl leading-[1] max-w-[800px] mx-auto" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, color: "#111827" }}>
               Behind every smooth operation, there's a dedicated team.
             </h2>
           </motion.div>
@@ -552,8 +555,8 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-xs uppercase tracking-wider text-[#0D5EA8]">{item.category}</p>
-                  <h4 className="font-semibold">{item.title}</h4>
+                  <p className="text-xs uppercase tracking-wider" style={{ color: "#2563EB", fontFamily: "'Inter', sans-serif" }}>{item.category}</p>
+                  <h4 className="font-semibold" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{item.title}</h4>
                 </div>
               </motion.div>
             ))}
@@ -562,13 +565,13 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* STATISTICS - New Section with Animated Counters */}
+      {/* STATISTICS - Updated typography */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-36 bg-white"
+        className="py-36" style={{ backgroundColor: "#FFFFFF" }}
       >
         <div className="max-w-[1600px] mx-auto px-8 lg:px-14">
 
@@ -579,11 +582,11 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <div className="w-20 h-[3px] bg-[#0D5EA8] mx-auto mb-8" />
-            <p className="uppercase tracking-[0.25em] text-[#0D5EA8] text-sm font-medium mb-6">
+            <div className="w-20 h-[3px] mx-auto mb-8" style={{ backgroundColor: "#2563EB" }} />
+            <p className="uppercase tracking-[0.25em] text-sm font-medium mb-6" style={{ color: "#2563EB", fontFamily: "'Inter', sans-serif" }}>
               Our Impact in Numbers
             </p>
-            <h2 className="text-5xl lg:text-7xl font-semibold leading-[1] max-w-[900px] mx-auto">
+            <h2 className="text-5xl lg:text-7xl leading-[1] max-w-[900px] mx-auto" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, color: "#111827" }}>
               Trusted by businesses across industries.
             </h2>
           </motion.div>
@@ -601,12 +604,12 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="text-center p-8 border border-neutral-100 bg-[#fafbfc]"
+                className="text-center p-8" style={{ backgroundColor: "#F8FAFC", border: "1px solid #E5E7EB" }}
               >
-                <h3 className="text-5xl lg:text-6xl font-bold text-[#0D5EA8]">
+                <h3 className="text-5xl lg:text-6xl font-bold" style={{ color: "#2563EB", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800 }}>
                   <Counter target={stat.target} suffix={stat.suffix} />
                 </h3>
-                <p className="mt-4 text-neutral-600 uppercase tracking-wider text-sm font-medium">{stat.label}</p>
+                <p className="mt-4 uppercase tracking-wider text-sm font-medium" style={{ color: "#4B5563", fontFamily: "'Inter', sans-serif" }}>{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -614,15 +617,15 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* TESTIMONIALS - Kept but updated testimonial content to be more generic */}
+      {/* TESTIMONIALS - Updated typography */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-36 bg-[#f8f8f8] relative overflow-hidden"
+        className="py-36 relative overflow-hidden" style={{ backgroundColor: "#F8FAFC" }}
       >
-        <div className="absolute inset-0 opacity-[0.08] bg-[radial-gradient(#0D5EA8_1px,transparent_1px)] [background-size:16px_16px]" />
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(#2563EB 1px, transparent 1px)", backgroundSize: "16px 16px" }} />
 
         <div className="relative max-w-[1600px] mx-auto px-8 lg:px-14">
 
@@ -635,9 +638,9 @@ export default function Home() {
             className="flex justify-between items-center mb-24"
           >
             <div>
-              <div className="w-20 h-[3px] bg-[#0D5EA8] mb-8" />
-              <p className="uppercase tracking-[0.25em] text-[#0D5EA8] text-sm font-medium mb-6">Testimonials</p>
-              <h2 className="text-5xl lg:text-7xl font-semibold leading-none">What Our Clients Say</h2>
+              <div className="w-20 h-[3px] mb-8" style={{ backgroundColor: "#2563EB" }} />
+              <p className="uppercase tracking-[0.25em] text-sm font-medium mb-6" style={{ color: "#2563EB", fontFamily: "'Inter', sans-serif" }}>Testimonials</p>
+              <h2 className="text-5xl lg:text-7xl leading-none" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, color: "#111827" }}>What Our Clients Say</h2>
             </div>
           </motion.div>
 
@@ -657,17 +660,17 @@ export default function Home() {
                 key={idx}
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
-                className="bg-white p-14 relative"
+                className="p-14 relative" style={{ backgroundColor: "#FFFFFF" }}
               >
                 <div className="flex items-center gap-5 mb-10">
                   <img src={`/client${idx + 1}.jpg`} alt="" className="w-20 h-20 rounded-full object-cover" />
                   <div>
-                    <h3 className="text-2xl">{testimonial.name}</h3>
-                    <p className="text-neutral-500">{testimonial.title}</p>
+                    <h3 className="text-2xl" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, color: "#111827" }}>{testimonial.name}</h3>
+                    <p style={{ color: "#6B7280", fontFamily: "'Inter', sans-serif" }}>{testimonial.title}</p>
                   </div>
                 </div>
-                <div className="absolute top-10 right-10 text-[120px] leading-none text-[#0D5EA8] opacity-20">"</div>
-                <p className="text-xl text-neutral-500 leading-[2] max-w-[600px]">{testimonial.text}</p>
+                <div className="absolute top-10 right-10 text-[120px] leading-none opacity-20" style={{ color: "#2563EB" }}>"</div>
+                <p className="text-xl leading-[2] max-w-[600px]" style={{ color: "#4B5563", fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>{testimonial.text}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -675,13 +678,13 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* CTA - Updated with contact info */}
+      {/* CTA - Updated typography */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-36 bg-white overflow-hidden"
+        className="py-36 overflow-hidden" style={{ backgroundColor: "#FFFFFF" }}
       >
         <div className="max-w-[1600px] mx-auto px-8 lg:px-14">
           <div className="relative">
@@ -704,22 +707,22 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative lg:absolute lg:left-20 lg:bottom-[-80px] bg-white shadow-[0_30px_100px_rgba(0,0,0,0.08)] max-w-[700px]"
+              className="relative lg:absolute lg:left-20 lg:bottom-[-80px] max-w-[700px]" style={{ backgroundColor: "#FFFFFF", boxShadow: "0 30px 100px rgba(0,0,0,0.08)" }}
             >
-              <div className="absolute top-0 left-0 w-2 h-full bg-[#0D5EA8]" />
+              <div className="absolute top-0 left-0 w-2 h-full" style={{ backgroundColor: "#2563EB" }} />
               <div className="p-12 lg:p-16">
-                <p className="uppercase tracking-[0.25em] text-[#0D5EA8] text-sm font-medium mb-6">Get In Touch</p>
-                <h2 className="text-5xl lg:text-7xl font-semibold leading-[1] mb-8">Ready to build your workforce?</h2>
-                <p className="text-neutral-500 text-lg leading-8 mb-6">
-                  Call us at <strong className="text-[#0D5EA8]">93251 58710</strong> or email <strong className="text-[#0D5EA8]">contact@platinummanpowerservices.com</strong>
+                <p className="uppercase tracking-[0.25em] text-sm font-medium mb-6" style={{ color: "#2563EB", fontFamily: "'Inter', sans-serif" }}>Get In Touch</p>
+                <h2 className="text-5xl lg:text-7xl leading-[1] mb-8" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, color: "#111827" }}>Ready to build your workforce?</h2>
+                <p className="text-lg leading-8 mb-6" style={{ color: "#6B7280", fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>
+                  Call us at <strong style={{ color: "#2563EB" }}>93251 58710</strong> or email <strong style={{ color: "#2563EB" }}>contact@platinummanpowerservices.com</strong>
                 </p>
-                <p className="text-neutral-500 text-lg leading-8 mb-10">
+                <p className="text-lg leading-8 mb-10" style={{ color: "#6B7280", fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>
                   Row House No. 2, Jai Maa Ashapura Society, Sinnar Phata, Nashik - 422101
                 </p>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group flex items-center gap-4 text-lg font-medium hover:text-[#0D5EA8] transition-all duration-300"
+                  className="group flex items-center gap-4 text-lg font-medium transition-all duration-300" style={{ color: "#111827" }}
                 >
                   Contact Us
                   <motion.span
