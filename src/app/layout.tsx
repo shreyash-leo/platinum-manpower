@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
+import ScrollToTop from "@/components/ScrollToTop";
 import "./globals.css";
 
 const geist = Geist({
@@ -22,6 +23,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geist.className} bg-white text-black`}>
         <SmoothScroll />
+
+        {/* Keep this after SmoothScroll */}
+        <ScrollToTop />
+
         {children}
       </body>
     </html>
