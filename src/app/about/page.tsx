@@ -24,6 +24,7 @@ import {
 const assets = {
   hero: "/images/hero-about.webp",
   staffGroup: "/images/about/staffgroup.webp",
+  office: "/images/about/office.webp",
   workforce: "/images/about/skilled-staff.webp",
   commercial: "/images/about/commercial.webp",
   hospital: "/images/about/healthcare-staff.webp",
@@ -171,7 +172,7 @@ const industries = [
   },
   {
     title: "Offices",
-    image: assets.staffGroup,
+    image: assets.office,
     text: "Flexible staffing and facility management support for corporate offices, business parks, and professional workspaces across Maharashtra.",
     points: [
       "Office assistants",
