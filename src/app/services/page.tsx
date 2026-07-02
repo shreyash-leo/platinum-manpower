@@ -19,12 +19,14 @@ const assets = {
   mall: "/images/services/mall-staff.webp",
   office: "/images/services/office-staff.webp",
   hospital: "/images/hospital-staff.png",
+  hospital2: "/images/services/hospital-staff3.webp",
   airport: "/images/services/airport-staff.webp",
-  contactTeam: "/images/contact-team.png",
+  contactTeam: "/images/contact-team.webp",
   workflow: "/images/services/workflow.webp",
   housekeeping: "/images/services/housekeeping-staff.webp",
   hospital_staff: "/images/services/Hospital-staff.webp",
   commercial: "/images/services/commercial-staff.webp",
+  contact: "/images/services/contact-team2.webp",
 };
 
 const services = [
@@ -115,7 +117,7 @@ const standards = [
 ];
 
 const industries = [
-  { title: "Hospitals", image: assets.hospital, text: "Healthcare staffing, housekeeping, patient support, and facility workforce for disciplined, hygiene-focused environments." },
+  { title: "Hospitals", image: assets.hospital2, text: "Healthcare staffing, housekeeping, patient support, and facility workforce for disciplined, hygiene-focused environments." },
   { title: "Hotels", image: assets.hotel, text: "Housekeeping, room attendants, kitchen support, and hospitality workforce for smooth guest experiences." },
   { title: "Shopping Malls", image: assets.mall, text: "Housekeeping, customer assistance, facility support, and maintenance workforce for high-footfall environments." },
   { title: "Airports", image: assets.airport, text: "Operational staff, facility support, customer assistance, and managed workforce for fast-paced environments." },
@@ -518,7 +520,7 @@ export default function ServicesPage() {
         <div className="mt-20 grid gap-5 lg:grid-cols-3">
           <article className="group relative min-h-[520px] overflow-hidden rounded-[9px] bg-[#104B9C] lg:col-span-2">
             <img
-              src={assets.staffGroup}
+              src={assets.contact}
               alt="Contract workforce support"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
             />

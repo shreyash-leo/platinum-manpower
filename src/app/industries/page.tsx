@@ -9,14 +9,14 @@ import Footer from "@/components/Footer";
 import { ScrollProgress } from "@/components/motion/MotionEffects";
 
 const assets = {
-  hero: "/images/hero-banner.png",
-  staffGroup: "/images/platinum-staff-group.png",
-  workforce: "/images/workforce-team.png",
-  hospital: "/images/hospital-staff.png",
-  hotel: "/images/hotel-staff.png",
-  mall: "/images/mall-staff.png",
-  airport: "/images/airport-staff.png",
-  contactTeam: "/images/contact-team.png",
+  hospital: "/images/industries/hospital-staff4.webp",
+  hospital2: "/images/industries/hospital-staff5.webp",
+  hotel: "/images/industries/hotel-staff4.webp",
+  mall: "/images/industries/mall-staff4.webp",
+  airport: "/images/industries/airport-staff4.webp", 
+  airport2: "/images/industries/airport-staff5.webp",   
+  workforce: "/images/industries/workforce-team.webp",
+  manpower: "/images/industries/manpower-team.webp",
 };
 
 const industries = [
@@ -24,7 +24,7 @@ const industries = [
     number: "01",
     title: "Hospitals & Healthcare",
     shortTitle: "Hospitals",
-    image: assets.hospital,
+    image: assets.hospital2,
     label: "Hygiene-led workforce support",
     summary:
       "Professional healthcare staffing and hospital manpower services for environments where hygiene, patient sensitivity, punctuality, and disciplined conduct are essential every day.",
@@ -115,7 +115,7 @@ const industries = [
     number: "04",
     title: "Airports & Transit Facilities",
     shortTitle: "Airports",
-    image: assets.airport,
+    image: assets.airport2,
     label: "Disciplined transit support",
     summary:
       "Professionally coordinated airport and transit workforce support where punctuality, grooming, customer service, and process discipline are critical.",
@@ -927,7 +927,7 @@ export default function IndustriesPage() {
 
             <div className="relative min-h-[650px] overflow-hidden rounded-[10px] bg-[#104B9C] shadow-[0_35px_100px_rgba(16,75,156,0.18)]">
               <img
-                src={assets.contactTeam}
+                src={assets.manpower}
                 alt="Platinum manpower coordination team"
                 className="absolute inset-0 h-full w-full object-cover"
               />

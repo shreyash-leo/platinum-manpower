@@ -19,13 +19,8 @@ import {
 } from "@/components/motion/MotionEffects";
 
 const assets = {
-  hero: "/images/contact-team.png",
-  staffGroup: "/images/platinum-staff-group.png",
-  workforce: "/images/workforce-team.png",
-  hospital: "/images/hospital-staff.png",
-  hotel: "/images/hotel-staff.png",
-  mall: "/images/mall-staff.png",
-  airport: "/images/airport-staff.png",
+  hero: "/images/contact/hero-contact.webp",
+  workforce: "/images/contact/workforce-team.webp",
 };
 
 const contactMethods = [
