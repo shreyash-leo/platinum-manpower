@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
 
 import MotionProvider from "@/components/motion/MotionProvider";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -7,13 +6,59 @@ import ScrollToTop from "@/components/ScrollToTop";
 
 import "./globals.css";
 
-const geist = Geist({
-  subsets: ["latin"],
-});
+const siteName = "Platinum Manpower";
+const siteDescription =
+  "Reliable manpower, staffing, recruitment, and facility management services across Maharashtra.";
 
 export const metadata: Metadata = {
-  title: "Platinum Manpower",
-  description: "Reliable Workforce Solutions For Every Industry",
+  metadataBase: new URL("https://platinummanpowerservices.com"),
+  title: {
+    default: siteName,
+    template: `%s | ${siteName}`,
+  },
+  description: siteDescription,
+  applicationName: siteName,
+  keywords: [
+    "manpower services Maharashtra",
+    "staffing agency",
+    "facility management",
+    "contract workforce",
+    "healthcare staffing",
+    "hospitality staffing",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: "/logo.webp",
+    apple: "/logo.webp",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName,
+    title: siteName,
+    description: siteDescription,
+    url: "/",
+    images: [
+      {
+        url: "/images/hero-banner.webp",
+        width: 1916,
+        height: 821,
+        alt: "Platinum Manpower workforce solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description: siteDescription,
+    images: ["/images/hero-banner.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -23,7 +68,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geist.className} bg-white text-black antialiased`}>
+      <body className="bg-white text-black antialiased">
         <ScrollToTop />
 
         <MotionProvider>

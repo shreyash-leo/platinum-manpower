@@ -1,7 +1,5 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
-
 import { AnimatePresence, motion } from "motion/react";
 import { useState, type ReactNode } from "react";
 
@@ -35,7 +33,6 @@ const assets = {
   contactTeam: "/images/contact-team.webp",
   contactTeam2: "/images/about/workforce.webp",
   skilled: "/images/about/skilled-staff2.webp",
-
 };
 
 const keyStats = [
@@ -491,6 +488,10 @@ export default function AboutPage() {
             <motion.img
               src={assets.hero}
               alt="Platinum Manpower and Facility Management Services workforce solutions"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              draggable={false}
               className="h-[300px] w-full object-cover md:h-[360px] xl:h-[420px]"
               initial={{
                 scale: 1.08,
@@ -556,6 +557,9 @@ export default function AboutPage() {
                   <motion.img
                     src={assets.staffGroup}
                     alt="Platinum professionally managed manpower team in Maharashtra"
+                    loading="lazy"
+                    decoding="async"
+                    draggable={false}
                     className="h-[620px] w-full object-cover"
                     whileHover={{
                       scale: 1.05,
@@ -673,6 +677,9 @@ export default function AboutPage() {
                 <motion.img
                   src={assets.contactTeam2}
                   alt="Managed workforce"
+                  loading="lazy"
+                  decoding="async"
+                  draggable={false}
                   className="mx-auto h-[720px] w-full object-cover"
                   whileHover={{
                     scale: 1.05,
@@ -738,6 +745,9 @@ export default function AboutPage() {
                       <motion.img
                         src={card.image}
                         alt={card.title}
+                        loading="lazy"
+                        decoding="async"
+                        draggable={false}
                         className="h-[360px] w-full object-cover md:h-[390px] xl:h-[420px]"
                         whileHover={{
                           scale: 1.06,
@@ -940,6 +950,9 @@ export default function AboutPage() {
                     <motion.img
                       src={selectedIndustry.image}
                       alt={selectedIndustry.title + " manpower support"}
+                      loading="lazy"
+                      decoding="async"
+                      draggable={false}
                       className="absolute inset-0 h-full w-full object-cover"
                       initial={{
                         scale: 1.08,

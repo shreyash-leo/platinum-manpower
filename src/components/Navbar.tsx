@@ -90,7 +90,7 @@ export default function Navbar() {
             }`}
           >
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="Platinum Manpower and Facility Management Services"
               width={220}
               height={60}

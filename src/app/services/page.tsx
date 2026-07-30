@@ -1,7 +1,5 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
-
 import Link from "next/link";
 import { useState, type ReactNode } from "react";
 import Navbar from "@/components/Navbar";
@@ -10,15 +8,12 @@ import { ScrollProgress } from "@/components/motion/MotionEffects";
 
 const assets = {
   professional: "/images/services/professional-workforce.webp",
-  staffGroup: "/images/platinum-staff-group.png",
-  workforce: "/images/workforce-team.png",
   image1: "/images/services/image-1.webp",
   image2: "/images/services/image-2.webp",
-  Healthcare: "/images//services/Healthcare.webp",
+  Healthcare: "/images/services/Healthcare.webp",
   hotel: "/images/services/hospitality-staff.webp",
   mall: "/images/services/mall-staff.webp",
   office: "/images/services/office-staff.webp",
-  hospital: "/images/hospital-staff.png",
   hospital2: "/images/services/hospital-staff3.webp",
   airport: "/images/services/airport-staff.webp",
   contactTeam: "/images/contact-team.webp",
@@ -282,6 +277,8 @@ export default function ServicesPage() {
               <img
                 src={assets.professional}
                 alt="Platinum professional workforce"
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#061b38]/85 via-transparent to-transparent" />
@@ -300,6 +297,8 @@ export default function ServicesPage() {
                 <img
                   src={assets.Healthcare}
                   alt="Healthcare support staff"
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#104B9C]/85 to-transparent" />
@@ -424,6 +423,8 @@ export default function ServicesPage() {
                 key={selectedService.image}
                 src={selectedService.image}
                 alt={selectedService.title}
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#061b38]/90 via-[#104B9C]/10 to-transparent" />
@@ -522,6 +523,8 @@ export default function ServicesPage() {
             <img
               src={assets.contact}
               alt="Contract workforce support"
+              loading="lazy"
+              decoding="async"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061b38]/95 via-[#104B9C]/30 to-transparent" />
@@ -578,6 +581,8 @@ export default function ServicesPage() {
             <img
               src={assets.workflow}
               alt="Workforce coordination team"
+              loading="lazy"
+              decoding="async"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#061b38]/95 via-[#104B9C]/65 to-transparent" />
@@ -703,6 +708,8 @@ export default function ServicesPage() {
               <img
                 src={industry.image}
                 alt={`${industry.title} manpower services`}
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#061b38]/92 via-[#104B9C]/20 to-transparent" />
@@ -791,6 +798,8 @@ export default function ServicesPage() {
             <img
               src={assets.contactTeam}
               alt="Platinum workforce support team"
+              loading="lazy"
+              decoding="async"
               className="absolute inset-0 h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061b38]/85 via-transparent to-transparent" />

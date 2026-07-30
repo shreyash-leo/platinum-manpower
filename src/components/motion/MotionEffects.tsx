@@ -447,6 +447,9 @@ export function ParallaxMedia({
       <motion.img
         src={src}
         alt={alt}
+        loading="lazy"
+        decoding="async"
+        draggable={false}
         style={{ y, scale }}
         className={`absolute -inset-y-[15%] left-0 h-[130%] w-full object-cover will-change-transform ${imageClassName}`}
       />

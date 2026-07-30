@@ -1,7 +1,5 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
-
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState, type ReactNode } from "react";
 
@@ -23,10 +21,8 @@ import {
 
 const assets = {
   heroBanner: "/images/hero-banner.webp",
-  heroTeam: "/images/platinum-hero-team.webp",
   staffGroup: "/images/platinum-staff-group.webp",
-  hospital: "/images/Healthcare-Support.png",
-  hopital2: "/images/Healthcare-Support-2.png",
+  hospital: "/images/Healthcare-Support.webp",
   hotel: "/images/Hospitality-Staff.webp",
   mall: "/images/mall-staff.webp",
   airport: "/images/airport.webp",
@@ -300,6 +296,9 @@ function AboutCarousel() {
           <motion.img
             src={activeSlide.image}
             alt={activeSlide.title}
+            loading="lazy"
+            decoding="async"
+            draggable={false}
             className="h-full w-full object-cover"
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
@@ -378,6 +377,10 @@ export default function Page() {
           <motion.img
             src={assets.heroBanner}
             alt="Platinum Manpower banner"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            draggable={false}
             className="absolute inset-0 h-full w-full object-cover object-[72%_center]"
             initial={{ scale: 1.08 }}
             animate={{ scale: 1 }}
@@ -808,6 +811,9 @@ export default function Page() {
                       <motion.img
                         src={industry.image}
                         alt={industry.title + " manpower support"}
+                        loading="lazy"
+                        decoding="async"
+                        draggable={false}
                         className="absolute inset-0 h-full w-full object-cover"
                         whileHover={{ scale: 1.07 }}
                         transition={{

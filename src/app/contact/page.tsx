@@ -728,6 +728,8 @@ export default function ContactPage() {
               <img
                 src={assets.workforce}
                 alt="Platinum workforce support"
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#061b38]/90 via-transparent to-transparent" />

@@ -13,8 +13,8 @@ const assets = {
   hospital2: "/images/industries/hospital-staff5.webp",
   hotel: "/images/industries/hotel-staff4.webp",
   mall: "/images/industries/mall-staff4.webp",
-  airport: "/images/industries/airport-staff4.webp", 
-  airport2: "/images/industries/airport-staff5.webp",   
+  airport: "/images/industries/airport-staff4.webp",
+  airport2: "/images/industries/airport-staff5.webp",
   workforce: "/images/industries/workforce-team.webp",
   manpower: "/images/industries/manpower-team.webp",
 };
@@ -443,6 +443,8 @@ export default function IndustriesPage() {
                   <img
                     src={assets.hospital}
                     alt="Hospital manpower support"
+                    loading="lazy"
+                    decoding="async"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#061b38]/90 via-transparent to-transparent" />
@@ -474,6 +476,8 @@ export default function IndustriesPage() {
                 <img
                   src={assets.airport}
                   alt="Professional industry workforce"
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#061b38]/92 via-[#104B9C]/12 to-transparent" />
@@ -574,6 +578,8 @@ export default function IndustriesPage() {
                   key={selectedIndustry.image}
                   src={selectedIndustry.image}
                   alt={`${selectedIndustry.title} manpower support`}
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#061b38]/94 via-[#104B9C]/18 to-transparent" />
@@ -839,6 +845,8 @@ export default function IndustriesPage() {
               <img
                 src={assets.workforce}
                 alt="Platinum workforce for different industries"
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#104B9C]/35" />
@@ -929,6 +937,8 @@ export default function IndustriesPage() {
               <img
                 src={assets.manpower}
                 alt="Platinum manpower coordination team"
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#061b38]/92 via-transparent to-transparent" />

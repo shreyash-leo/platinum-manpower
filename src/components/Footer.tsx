@@ -1,14 +1,5 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-
-import {
-  FaFacebookF,
-  FaLinkedinIn,
-  FaTwitter,
-  FaInstagram,
-} from "react-icons/fa";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -24,13 +15,6 @@ const services = [
   "Payroll Management",
   "HR Outsourcing",
   "Facility Management",
-];
-
-const socialLinks = [
-  { label: "Facebook", href: "#", icon: FaFacebookF },
-  { label: "LinkedIn", href: "#", icon: FaLinkedinIn },
-  { label: "Twitter", href: "#", icon: FaTwitter },
-  { label: "Instagram", href: "#", icon: FaInstagram },
 ];
 
 export default function Footer() {
@@ -52,22 +36,6 @@ export default function Footer() {
             long-term workforce partnerships.
           </p>
 
-          <div className="mt-10 flex items-center gap-4">
-            {socialLinks.map((item) => {
-              const Icon = item.icon;
-
-              return (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  aria-label={item.label}
-                  className="flex h-11 w-11 items-center justify-center rounded-[4px] border border-white/25 text-white/70 transition hover:border-[#d6eaff] hover:text-[#d6eaff] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d6eaff]"
-                >
-                  <Icon />
-                </a>
-              );
-            })}
-          </div>
         </div>
 
         {/* Right Links */}
@@ -109,17 +77,17 @@ export default function Footer() {
             </h4>
 
             <a
-              href="tel:+919876543210"
+              href="tel:+919325158710"
               className="text-lg font-semibold text-white transition hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d6eaff]"
             >
-              +91 98765 43210
+              +91 93251 58710
             </a>
 
             <a
-              href="mailto:info@platinummanpower.com"
+              href="mailto:contact@platinummanpowerservices.com"
               className="text-lg font-semibold text-white transition hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d6eaff]"
             >
-              info@platinummanpower.com
+              contact@platinummanpowerservices.com
             </a>
 
             <p className="text-lg font-semibold leading-7 text-white">
@@ -137,7 +105,7 @@ export default function Footer() {
       <div className="grid items-end gap-12 text-white/60 lg:grid-cols-[1fr_1.45fr] lg:gap-28">
         <Link href="/" aria-label="Platinum Manpower home">
           <Image
-            src="/logo1.png"
+            src="/logo1.webp"
             alt="Platinum Manpower"
             width={320}
             height={90}
