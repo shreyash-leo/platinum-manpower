@@ -34,3 +34,22 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Platinum Manpower
+
+## Contact form email setup
+
+The contact form sends enquiries through the server-side
+`/api/enquiry` endpoint. Copy `.env.example` to `.env.local` and replace
+the SMTP password with an app password supplied by the mailbox provider.
+Never commit `.env.local`.
+
+For Google Workspace or Gmail:
+
+1. Enable two-step verification for the SMTP mailbox.
+2. Create a Google app password.
+3. Put that 16-character app password in `SMTP_PASS`.
+4. Add the same environment variables to the production hosting provider.
+
+The authenticated SMTP account should normally match `SMTP_FROM`.
+All website enquiries are sent to `ENQUIRY_TO`, which defaults to
+`contact@platinummanpowerservices.com`.

@@ -37,6 +37,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setMobileMenuOpen(false);
+    setScrolled(false);
   }, [pathname]);
 
   useEffect(() => {

@@ -2,7 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element */
 
-import { useMemo, useState, type FormEvent, type ReactNode } from "react";
+import { useRef, useState, type FormEvent, type ReactNode } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
@@ -160,6 +160,7 @@ type EnquiryForm = {
   quantity: string;
   location: string;
   message: string;
+  website: string;
 };
 
 const initialForm: EnquiryForm = {
@@ -172,7 +173,10 @@ const initialForm: EnquiryForm = {
   quantity: "",
   location: "",
   message: "",
+  website: "",
 };
+
+type SubmitState = "idle" | "sending" | "success" | "error";
 
 function SectionHeading({
   children,
@@ -269,43 +273,60 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
 
 export default function ContactPage() {
   const [form, setForm] = useState<EnquiryForm>(initialForm);
-  const [submitted, setSubmitted] = useState(false);
-
-  const whatsappMessage = useMemo(() => {
-    return [
-      "Hello Platinum Manpower, I would like to discuss a staffing requirement.",
-      "",
-      `Name: ${form.name || "Not provided"}`,
-      `Company: ${form.company || "Not provided"}`,
-      `Phone: ${form.phone || "Not provided"}`,
-      `Email: ${form.email || "Not provided"}`,
-      `Industry: ${form.industry || "Not selected"}`,
-      `Service: ${form.service || "Not selected"}`,
-      `Required Staff: ${form.quantity || "Not provided"}`,
-      `Location: ${form.location || "Not provided"}`,
-      `Additional Details: ${form.message || "Not provided"}`,
-    ].join("\n");
-  }, [form]);
+  const [submitState, setSubmitState] = useState<SubmitState>("idle");
+  const [submitMessage, setSubmitMessage] = useState("");
+  const formStartedAt = useRef(Date.now());
 
   function updateField(field: keyof EnquiryForm, value: string) {
-    setSubmitted(false);
+    setSubmitState("idle");
+    setSubmitMessage("");
     setForm((current) => ({ ...current, [field]: value }));
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     if (!form.name.trim() || !form.phone.trim() || !form.service) {
-      setSubmitted(false);
+      setSubmitState("error");
+      setSubmitMessage("Please complete all required fields.");
       return;
     }
 
-    setSubmitted(true);
-    window.open(
-      `https://wa.me/919325158710?text=${encodeURIComponent(whatsappMessage)}`,
-      "_blank",
-      "noopener,noreferrer",
-    );
+    setSubmitState("sending");
+    setSubmitMessage("");
+
+    try {
+      const response = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...form,
+          startedAt: formStartedAt.current,
+        }),
+      });
+
+      const result = (await response.json()) as { message?: string };
+
+      if (!response.ok) {
+        throw new Error(result.message || "Unable to send your enquiry.");
+      }
+
+      setSubmitState("success");
+      setSubmitMessage(
+        "Thank you. Your enquiry has been emailed to our coordination team.",
+      );
+      setForm(initialForm);
+      formStartedAt.current = Date.now();
+    } catch (error) {
+      setSubmitState("error");
+      setSubmitMessage(
+        error instanceof Error
+          ? error.message
+          : "Unable to send your enquiry. Please try again.",
+      );
+    }
   }
 
   return (
@@ -491,8 +512,8 @@ export default function ContactPage() {
 
               <p className="mt-10 max-w-[520px] text-[19px] leading-[1.45] text-white/70">
                 Complete the form with the most important staffing details. On
-                submission, your enquiry will open in WhatsApp so you can send
-                it directly to our coordination team.
+                submission, your enquiry will be emailed securely to our
+                coordination team.
               </p>
 
               <div className="mt-12 border-t border-white/20 pt-8">
@@ -517,8 +538,27 @@ export default function ContactPage() {
 
             <form
               onSubmit={handleSubmit}
+              aria-busy={submitState === "sending"}
               className="rounded-[12px] bg-white p-7 text-black shadow-[0_35px_100px_rgba(0,0,0,0.18)] md:p-10 xl:p-12"
             >
+              <div
+                aria-hidden="true"
+                className="absolute -left-[9999px] h-px w-px overflow-hidden"
+              >
+                <label htmlFor="website">Website</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={form.website}
+                  onChange={(event) =>
+                    updateField("website", event.target.value)
+                  }
+                />
+              </div>
+
               <div className="grid gap-x-6 gap-y-7 md:grid-cols-2">
                 <div>
                   <FieldLabel>Your Name *</FieldLabel>
@@ -655,21 +695,30 @@ export default function ContactPage() {
               <div className="mt-8 flex flex-col items-start justify-between gap-5 border-t border-black/10 pt-8 sm:flex-row sm:items-center">
                 <p className="max-w-[430px] text-[14px] leading-[1.45] text-[#696969]">
                   By submitting, you agree to share these details with Platinum
-                  Manpower through WhatsApp for enquiry coordination.
+                  Manpower by email for enquiry coordination.
                 </p>
 
                 <button
                   type="submit"
-                  className="inline-flex h-14 items-center gap-4 rounded-[5px] bg-[#104B9C] px-7 py-4 text-[15px] font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#0c3b7d]"
+                  disabled={submitState === "sending"}
+                  className="inline-flex h-14 items-center gap-4 rounded-[5px] bg-[#104B9C] px-7 py-4 text-[15px] font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#0c3b7d] disabled:cursor-wait disabled:opacity-65 disabled:hover:translate-y-0"
                 >
-                  Send Enquiry
+                  {submitState === "sending" ? "Sending..." : "Send Enquiry"}
                   <span className="text-[20px]">→</span>
                 </button>
               </div>
 
-              {submitted && (
-                <p className="mt-5 rounded-[5px] bg-[#eaf4ff] px-4 py-3 text-[15px] font-medium text-[#104B9C]">
-                  Your requirement has been prepared and opened in WhatsApp.
+              {submitState !== "idle" && submitState !== "sending" && (
+                <p
+                  role="status"
+                  aria-live="polite"
+                  className={`mt-5 rounded-[5px] px-4 py-3 text-[15px] font-medium ${
+                    submitState === "success"
+                      ? "bg-[#eaf4ff] text-[#104B9C]"
+                      : "bg-red-50 text-red-700"
+                  }`}
+                >
+                  {submitMessage}
                 </p>
               )}
             </form>
